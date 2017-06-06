@@ -1,0 +1,14 @@
+.article_img{
+	float: left;
+	width:20%;
+	text-align: center;
+}
+.article_img img{
+	width: 100%;
+}
+.article_content{
+	float:left;
+	width: 70%;
+	margin-left: 5%;
+}
+

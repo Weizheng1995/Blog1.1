@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wz.dao.AuthorDao">
+    <!-- 目的 :为DAO接口提供配置 -->
+    <select id="login" parameterType="String" resultType="Author">
+        select author_id,author_name,author_pwd,author_qq,author_weixin,author_mail,author_phone,author_description
+        from author
+        where author_name=#{authorName}
+        and author_pwd=#{authorPwd}
+    </select>
+    <update id="updateInfo" parameterType="Author" >
+        update author
+        set author_qq=#{author.authorQq},author_weixin=#{author.authorWeixin},author_mail=#{author.authorMail},author_phone=#{author.authorPhone},author_description=#{author.authorDescription}
+        where author_id=#{author.authorId}
+    </update>
+    <select id="queryById" parameterType="int" resultType="Author">
+        select author_id,author_name,author_qq,author_weixin,author_mail,author_phone,author_description
+        from author
+        where author_id=#{authorId}
+    </select>
+</mapper>

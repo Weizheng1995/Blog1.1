@@ -1,0 +1,23 @@
+.share-resource {
+}
+.share-title{
+	/*border:2px solid aquamarine;*/
+	background: rgba(176, 127, 255, 0.51);
+	border-radius: 3px 3px;
+	margin: 0px;
+	font-size: 40px;
+	position: relative;
+	top: 20px;
+	text-indent: 0em;
+	width: 250px;
+}
+.article_img{
+	float:left;
+	width: 25%;
+}
+.article_content{
+	float: left;
+	width:70%;
+	margin-left: 5px;
+}
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wz.dao.ArticleDao">
+    <!-- 目的 :为DAO接口提供配置 -->
+    <select id="queryById" parameterType="int" resultType="Article">
+        select article_id,article_title,article_content,article_createtime,article_viewcount,article_category,article_author
+        from article
+        where article_id=#{articleId}
+    </select>
+    <select id="queryAll" resultType="Article">
+        select article_id,article_title,article_content,article_createtime,article_viewcount,article_category,article_author
+        from article
+        order by article_createtime desc
+    </select>
+    <select id="queryByCategoryAndKeyWord" resultType="Article">
+        select article_id,article_title,article_content,article_createtime,article_viewcount,article_category,article_author
+        from article
+        where 1=1
+        <if test="category!=101">
+            and article_category=#{category}
+        </if>
+        <if test="keyWord!=null">
+            and article_title like #{keyWord}
+        </if>
+    </select>
+    <!--对文章信息增删改-->
+    <insert id="create" parameterType="Article">
+        insert into article(article_title,article_content,article_createtime,article_viewcount,article_category,article_author)
+        values(#{article.articleTitle},#{article.articleContent},#{article.articleCreatetime},#{article.articleViewcount},#{article.articleCategory},#{article.articleAuthor})
+    </insert>
+    <delete id="delete" parameterType="int">
+        delete  from article
+        where article_id=#{articleId}
+    </delete>
+    <update id="update" parameterType="Article">
+        update article
+        set article_title=#{article.articleTitle},article_content=#{article.articleContent},article_createtime=#{article.articleCreatetime}
+        where article_id=#{article.articleId}
+    </update>
+    <!--浏览数增1-->
+    <update id="updateViewcount" parameterType="Article">
+        update article
+        set article_viewcount=#{article.articleViewcount}+1
+        where article_id=#{article.articleId}
+    </update>
+</mapper>
