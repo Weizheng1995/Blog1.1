@@ -1,17 +1,22 @@
 package com.wz.control;
 
+import com.alibaba.fastjson.JSON;
 import com.wz.pojo.Article;
 import com.wz.pojo.Author;
 import com.wz.pojo.Category;
 import com.wz.service.ArticleService;
 import com.wz.service.AuthorService;
 import com.wz.service.CategoryService;
+import com.wz.util.DivPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.List;
 
 /**
@@ -37,6 +42,35 @@ public class ArticleControl {
         // 返回全部展示文章界面
         mv.setViewName("articles");
         return mv;
+    }
+    @RequestMapping(value = "/loadArticles")
+    public void subList(int pageIndex, HttpServletResponse response, HttpSession session ){
+        // 分页包装类
+        DivPage divPage=new DivPage();
+        List<Article> lists=(List<Article>) session.getAttribute("articleList");
+//        List<Article> subList;
+        divPage.setArticles(lists);
+        if(lists.size()>0){
+            divPage.setCurrentPage(pageIndex);
+//            subList=divPage.getSubList();
+            //  session.setAttribute("subList",subList);
+            // 这步有意义也没意义
+            divPage.articles=null;
+        }
+
+        // 传输数据
+        response.setHeader("Cache-Control", "no-cache");
+        response.setHeader("Pragma", "no-cache");
+        response.setDateHeader("Expires", 0);
+        response.setContentType("text/html;charset=utf-8");
+        String responseStr = JSON.toJSONString(divPage);
+        try{
+            Writer writer = response.getWriter();
+            writer.write(responseStr);
+            writer.flush();
+        }catch(IOException e){
+            new RuntimeException("loadArticles-writer:",e);
+        }
     }
     @RequestMapping(value="/articleDetail")
     public ModelAndView queryById(int articleId,ModelAndView mv){

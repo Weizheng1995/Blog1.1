@@ -28,7 +28,7 @@
 		$(window).on('scroll',function(){
 			if($(window).scrollTop()>$(window).height())
 			    backButton.fadeIn();
-			else 
+			else
 			    backButton.fadeOut();
 		})
 	}

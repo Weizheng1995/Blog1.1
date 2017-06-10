@@ -41,20 +41,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      			<!--内容-->
      			<div class="content">
      				<div class="content_wrapper">
-     					<div class="article_group">
-                             <c:forEach var="item" items="${articleList}" varStatus="status">
-                                 <div class="article_item">
-                                     <div class="article_info">
-                                      编辑于 ${item.getCurrentDate()}  浏览:${item.articleViewcount} &nbsp;作者:${author.authorName} &nbsp;分类:${item.articleCategory}
-                                     <a href="articleDetail?articleId=${item.articleId}" >查看更多</a>
-                                     </div>
-                                     <article>
-                                         <h2 align="center">${item.articleTitle}<h2>
-                                         <p>${item.getSubString(50)}。。。。<p>
-                                     </article>
-                                 </div>
-                             </c:forEach>
+     					<div class="article_group" id="articlesDiv">
      					</div>
+     					<h4 id="emptyInfo"></h4>
      				</div>
      			</div>
      			<!--页脚-->
@@ -82,6 +71,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      		</div>
      		<button class="back-to-top">返回顶部</button>
      		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+     		<script type="text/javascript" src="js/jquery.pagination.js"></script>
      		<script type="text/javascript" src="js/main.js" ></script>
+     		<script type="text/javascript" src="js/page.js" ></script>
+     		<script></script>
   </body>
 </html>

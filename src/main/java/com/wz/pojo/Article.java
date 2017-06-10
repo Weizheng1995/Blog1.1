@@ -15,7 +15,6 @@ public class Article {
     private int articleViewcount;
     private int articleCategory;
     private int articleAuthor;
-
     public int getArticleId() {
         return articleId;
     }

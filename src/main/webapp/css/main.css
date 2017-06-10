@@ -334,3 +334,9 @@ article{
 }
 .article_item{
 }
+#emptyInfo{
+    padding:0px;
+    margin:0px;
+    align:center;
+    text-align:center;
+}
