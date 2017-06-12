@@ -17,10 +17,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<header>
 				<nav>
 					<div class="logo">
-						<a href="index.jsp">魏政</a>
+						<a href="homePage">魏政</a>
 					</div>
 					<ul>
-						<li><a href="index.jsp" >首 页</a></li>
+						<li><a href="homePage" >首 页</a></li>
 						<li><a href="queryAllArticle">文 章</a></li>
 						<li><a href="aboutMe" >关于我</a></li>
 						<li><a href="myUniversity.jsp" class="active">我的大学</a></li>

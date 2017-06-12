@@ -26,6 +26,11 @@ public class ManagerControl {
     ArticleService articleService;
     @Autowired
     CategoryService categoryService;
+    @RequestMapping(value = "/homePage")
+    public ModelAndView homePage(ModelAndView mv){
+        mv.setViewName("index");
+        return mv;
+    }
     /**
      * 打开控制台管理界面
      * @param mv

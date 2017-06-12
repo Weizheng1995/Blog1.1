@@ -15,7 +15,7 @@
     <mvc:annotation-driven/>
 	<!-- 视图解析器，配置统一的后缀 -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<!--<property name="prefix" value="/WEB-INF/view/"></property>-->
+		<!--<property name="prefix" value="/WEB-INF/"></property>-->
 		<property name="suffix" value=".jsp"></property>
 	</bean>
     <!--@ResponseBody JSON解析-->
