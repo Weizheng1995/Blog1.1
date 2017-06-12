@@ -46,6 +46,14 @@
         <servlet-name>springmvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <!--&lt;!&ndash;安全机制，限制直接访问.jsp&ndash;&gt;-->
+    <!--<security-constraint>-->
+        <!--<web-resource-collection>-->
+            <!--<web-resource-name>JSPs</web-resource-name>-->
+            <!--<url-pattern>/webapp/</url-pattern>&lt;!&ndash; 拒绝直接访问web文件夹下的所有页面 &ndash;&gt;-->
+        <!--</web-resource-collection>-->
+        <!--<auth-constraint/>-->
+    <!--</security-constraint>-->
     <!--编码过滤-->
     <filter>
         <filter-name>characterEncodingFilter</filter-name>

@@ -15,6 +15,40 @@ p{
 ul{
 	margin: 0;
 }
+#loginForm{
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+}
+#loginForm label{
+	display: inline-block;
+	color: olivedrab;
+	margin: 20px 0px auto;
+	font-weight: 300;
+    font-size: larger;
+}
+#loginForm input{
+	margin: 15px 0px auto;
+	font-weight: 700;
+	background-color: antiquewhite;
+    text-align: left;
+    border-radius: 5px;
+    line-height: 2;
+    width: 60%;
+}
+#loginForm [type="submit"]{
+    width: 30%;
+    text-align: center;
+}
+#loginForm a{
+	margin: 5px auto;
+    color: #755934;
+    display: inline-block;
+    line-height: 40px;
+}
+#loginForm a:hover{
+	color: #89B532;
+}
 .clearfix:after{
 	content: '';
 	display: block;

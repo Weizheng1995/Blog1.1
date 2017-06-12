@@ -31,9 +31,28 @@ public class ManagerControl {
      * @param mv
      * @return
      */
-    @RequestMapping(value = "/managerConsole")
+    @RequestMapping(value = "/blogLogin")
     public ModelAndView managerControl(ModelAndView mv){
-        mv.setViewName("manager");
+        mv.setViewName("login");
+        return mv;
+    }
+    @RequestMapping(value = "/managerConsole")
+    public ModelAndView login(String userName,String userPwd,ModelAndView mv,HttpSession session){
+        // 登录状态，回馈信息
+        String message="";
+        if(userName==null||userName.trim().length()==0||userPwd==null||userPwd.trim().length()==0){
+            message="请输入完整的登录信息";
+            mv.setViewName("login");
+        }else{
+            // 验证密码和用户名
+            if(authorService.login(userName,userPwd)!=null){
+                mv.setViewName("manager");
+            }else{
+                message="登录验证失败，请仔细检查登录信息";
+                mv.setViewName("login");
+            }
+        }
+        mv.addObject("message",message);
         return mv;
     }
     /**
@@ -146,4 +165,5 @@ public class ManagerControl {
         mv.setViewName("../viewArticle");
         return mv;
     }
+
 }
