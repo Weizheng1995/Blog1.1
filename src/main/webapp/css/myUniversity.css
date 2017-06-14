@@ -4,3 +4,56 @@
 .article_content{
 	
 }
+.termItem{
+	width: 100%;
+	margin: 0px auto;
+}
+.title_p{
+	text-align: left;
+	color: darkgray;
+	font-size: large;
+	line-height: 30px;
+	border-bottom: 2px dashed #D4B080;
+	width: 90%;
+}
+/*学期基本内容*/
+.termContent{
+	width: 100%;
+	margin: 0px auto;
+}
+/*图片*/
+.termImage{
+	float: left;
+	width: 30%;
+	text-align: center;
+}
+.termImage image{
+	max-width: 100%;
+}
+/*描述*/
+.termDescription{
+	float: left;
+    margin-left: 15px;
+    width: 55%;
+}
+/*学期课程*/
+.termCourse{
+	margin: 10px auto;
+}
+/*课程信息*/
+.courseItem{
+	border: 1px solid gainsboro;
+	margin-bottom: 5px;
+	width: 70%;
+}
+.courseItem th{
+	background: palegreen;
+}
+.courseItem tr{
+	background: paleturquoise;
+	text-align: center;
+	height: 30px;
+}
+.courseItem tr:hover{
+	background: deepskyblue;
+}

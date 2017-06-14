@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wz.dao.CourseDao">
+    <!-- 目的 :为DAO接口提供配置 -->
+    <select id="queryByTerm" parameterType="int" resultType="Course">
+        select course_id,course_name,course_score,term,share
+        from course
+        where term=#{termId}
+    </select>
+</mapper>

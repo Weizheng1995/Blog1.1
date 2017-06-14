@@ -48,6 +48,9 @@ public class ArticleControl {
         // 分页包装类
         DivPage divPage=new DivPage();
         List<Article> lists=(List<Article>) session.getAttribute("articleList");
+        if(lists==null){
+            lists=articleService.queryAll();
+        }
 //        List<Article> subList;
         divPage.setArticles(lists);
         if(lists.size()>0){

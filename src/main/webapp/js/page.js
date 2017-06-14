@@ -3,7 +3,7 @@
 		'use strike';
 		        // 下拉自动加载数据实现分页
                 // 下拉加载更多数据的功能
-                var url = "http://localhost:8080/blog/loadArticles"; // 请求获取数据的url
+                var url = "http://www.zhengzi.studio/blog/loadArticles"; // 请求获取数据的url
                 var totalPage = 1; //一共有多少页数据
                 var pageSize = 10; // 每页显示30条数据
                 var currentPage = 1; // 当前第几页数据，默认为1

@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li><a href="homePage" >首 页</a></li>
 						<li><a href="queryAllArticle">文 章</a></li>
 						<li><a href="aboutMe" >关于我</a></li>
-						<li><a href="myUniversity.jsp" class="active">我的大学</a></li>
+						<li><a href="myUniversity" class="active">我的大学</a></li>
 						<li id="sidebar_trigger"><a href="#">分 享</a></li>
 					</ul>
 				</nav>
@@ -54,13 +55,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                           -->
                           <p>
                           	基本信息：<br />
-                            &nbsp;&nbsp;于2014-2018，就读于南京一所大学，所属计算机系软件工程专业。<br /><br /><br /><br /><br /><br />
+                            &nbsp;&nbsp;${university.universityDescription}<br /><br /><br /><br /><br /><br />
                           </p>
                           <h2>学习资料</h2>
-                          <h3>大一</h3>
-                          <h3>大二</h3>
-                          <h3>大三</h3>
-                          <h3>大四</h3>
+                          <c:forEach var="item" items="${termList}" varStatus="status">
+                          <div class="termItem">
+                                <p class="title_p">${item.termName}  ${item.termTime}</p>
+                                <div class="termContent clearfix">
+                                    <div class="termImage">
+                                        <img  src="img/${item.pic}" alt="你好啊"/>
+                                  	</div>
+                                    <div class="termDescription">
+                                         <article>
+                                      	    ${item.termDescription}
+                                    	 </article>
+                                   	</div>
+                                </div>
+                                <div class="termCourse">
+                                     <p class="title_p" style="width: 40%;">课程</p>
+                                     <table class="courseItem">
+                                       <tr>
+                                         <th>课程名称</th>
+                                         <th>得分</th>
+                                         <th>分享</th>
+                                       </tr>
+                                       <c:forEach var="course" items="${item.courseList}" varStatus="stau">
+                                       <tr>
+                                         <td>${course.courseName}</td>
+                                         <td>${course.courseScore}</td>
+                                         <td>${course.share}</td>
+                                       </tr>
+                                        </c:forEach>
+                                     </table><br />
+                                </div>
+                          </div>
+                          </c:forEach>
 				      </div>
 				     </article>
 				</div>

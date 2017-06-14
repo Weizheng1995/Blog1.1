@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      						<li><a href="homePage" >首 页</a></li>
      						<li><a href="queryAllArticle" class="active">文 章</a></li>
      						<li><a href="aboutMe">关于我</a></li>
-     						<li><a href="myUniversity.jsp" >我的大学</a></li>
+     						<li><a href="myUniversity" >我的大学</a></li>
      						<li id="sidebar_trigger"><a href="#">分 享</a></li>
      					</ul>
      				</nav>
