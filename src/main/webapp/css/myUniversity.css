@@ -1,5 +1,11 @@
 .article_img{
 	float: left;
+	text-align:center;
+    overflow:hidden;
+    max-width:40%;
+}
+.article_img img{
+    width:100%;
 }
 .article_content{
 	
@@ -25,10 +31,12 @@
 .termImage{
 	float: left;
 	width: 30%;
-	text-align: center;
+	text-align:center;
+	overflow:hidden;
 }
-.termImage image{
-	max-width: 100%;
+.termImage img{
+	width: 100%;
+	margin:0 auto;
 }
 /*描述*/
 .termDescription{

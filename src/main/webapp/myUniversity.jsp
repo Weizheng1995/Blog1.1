@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 					<article class="clearfix">
 					  <div class="article_img">
-					  	<img  src="img/zheng.jpg" alt="你好啊"/>
+					  	<img  src="img/uni01.jpg" alt="你好啊"/>
 				      </div>
 				      <div class="article_content">
 				      	<!--
@@ -71,6 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     	 </article>
                                    	</div>
                                 </div>
+                                <c:if test="${item.courseList!=null}">
                                 <div class="termCourse">
                                      <p class="title_p" style="width: 40%;">课程</p>
                                      <table class="courseItem">
@@ -88,6 +89,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                         </c:forEach>
                                      </table><br />
                                 </div>
+                                </c:if>
                           </div>
                           </c:forEach>
 				      </div>
